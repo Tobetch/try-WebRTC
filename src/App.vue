@@ -1,19 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header title="WasshoiHouse" />
+    <form id="join-form">
+      <div class="item">
+        <p>User ID</p>
+        <input id="userId" type="text" placeholder="" required />
+      </div>
+      <div class="item">
+        <p>Account Name</p>
+        <input id="accountName" type="text" placeholder="" required />
+      </div>
+      <div class="button-group">
+        <b-button
+          id="join"
+          type="submit"
+          class="item"
+          size="lg"
+          variant="primary"
+        >
+          Join
+        </b-button>
+        <b-button class="item" size="lg" variant="secondary">
+          Create Room
+        </b-button>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Header,
+  },
+};
 </script>
 
 <style>
@@ -24,5 +47,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.item {
+  margin: 10px 0;
+}
+
+.button-group > .item {
+  margin: 15px;
 }
 </style>
